@@ -9,6 +9,8 @@ import (
 
 type RuleError struct{ Rule, Reason string }
 
+const MechanismID = "error.wrapping_lost"
+
 func (e RuleError) Error() string { return fmt.Sprintf("rule %s failed: %s", e.Rule, e.Reason) }
 
 type Service struct{ Store *store.Store }
